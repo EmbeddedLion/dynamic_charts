@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<!-- saved from url=(0071)https://www.cnblogs.com/lwme/archive/2012/08/18/jquery-flot-plugin.html -->
+<html lang="zh-cn"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="never">
+<title>flot - jQuery 图表插件(jquery.flot)使用 - 囧月 - 博客园</title>
+<link type="text/css" rel="stylesheet" href="./flot - jQuery 图表插件(jquery.flot)使用 - 囧月 - 博客园_files/blog-common.css">
+<link id="MainCss" type="text/css" rel="stylesheet" href="./flot - jQuery 图表插件(jquery.flot)使用 - 囧月 - 博客园_files/bundle-Minyx2_Lite.css">
+<link type="text/css" rel="stylesheet" href="./flot - jQuery 图表插件(jquery.flot)使用 - 囧月 - 博客园_files/69285.css">
+<link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="./flot - jQuery 图表插件(jquery.flot)使用 - 囧月 - 博客园_files/bundle-Minyx2_Lite-mobile.css">
+<link title="RSS" type="application/rss+xml" rel="alternate" href="http://www.cnblogs.com/lwme/rss">
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="http://www.cnblogs.com/lwme/rsd.xml">
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="http://www.cnblogs.com/lwme/wlwmanifest.xml">
+<script type="text/javascript" async="" src="./flot - jQuery 图表插件(jquery.flot)使用 - 囧月 - 博客园_files/ga.js"></script><script async="" src="./flot - jQuery 图表插件(jquery.flot)使用 - 囧月 - 博客园_files/analytics.js"></script><script src="./flot - jQuery 图表插件(jquery.flot)使用 - 囧月 - 博客园_files/jquery-2.2.0.min.js"></script>
+<script type="text/javascript">var currentBlogApp = 'lwme', cb_enable_mathjax=false;var isLogined=false;</script>
+<script src="./flot - jQuery 图表插件(jquery.flot)使用 - 囧月 - 博客园_files/blog-common.js" type="text/javascript"></script>
+<script src="./flot - jQuery 图表插件(jquery.flot)使用 - 囧月 - 博客园_files/bundle-Minyx2_Lite.js" language="javascript" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+
+<div id="container">
+    <a class="minyx" href="http://www.cnblogs.com/">代码改变世界</a>
+    <ul id="topMnu">
+        <!-- 统计数据 -->
+        <li>
+            
+                <div id="blog_stats">
+Posts - 65, 
+Articles - 0, 
+Comments - 272
+<!----></div>
+            
+        </li>
+        <!-- 这边可以增加一些链接 -->
+        <!-- 博客园 -->
+        <li><a href="http://www.cnblogs.com/">Cnblogs</a></li>
+        <!-- 管理 -->
+        <li id="topMnu-dashboard">
+            <a id="lnkDashboard" href="http://www.cnblogs.com/lwme/admin/EditPosts.aspx">Dashboard</a></li>
+        <li>
+            <a id="lnkLogin" href="http://passport.cnblogs.com/login.aspx?ReturnUrl=http://www.cnblogs.com/lwme/archive/2012/08/18/jquery-flot-plugin.html">Login</a></li>
+    </ul>
+
+    <script type="text/javascript">
+        var m = window.__blog.topMenuRendered;
+        if (m) { m(__$("topMnu")); }
+    </script>
+
+    <div id="header">
+        <ul id="menu">
+            <!-- 首页，当前section加上current类 -->
+            <li id="menu-home" class="current">
+                <a id="lnkHome" href="http://www.cnblogs.com/lwme/">Home</a></li>
+            <!-- 联系 -->
+            <li id="menu-contact">
+                <a id="lnkContact" href="http://space.cnblogs.com/msg/send/%e5%9b%a7%e6%9c%88">Contact</a></li>
+            <!-- 相册 -->
+            <li id="menu-gallary">
+                <a id="lnkGallery" href="http://www.cnblogs.com/lwme/gallery.html">Gallery</a></li>
+            <!-- Rss订阅 -->
+            <li id="rss">
+                <a id="lnkRss" href="http://www.cnblogs.com/lwme/rss">RSS</a></li>
+        </ul>
+        <div id="newmsg"></div>
+        <h1>
+            <!-- 主标题 -->
+            <a id="lnkBlogTitle" href="http://www.cnblogs.com/lwme/">囧月</a>
+            <!-- 子标题 -->
+            <small>
+                坐井观天</small>
+        </h1>
+    </div>
+
+    <script type="text/javascript">
+        var m = window.__blog.headerRendered;
+        if (m) { m(__$("header")); }
+    </script>
+
+    <div id="wrapper">
+        <div id="content">
+            <script type="text/javascript">
+                var m = window.__blog.preRenderPosts;
+                if (m) { m(); }
+            </script>
+            
+<div id="post_detail">
+<div class="post" id="post">
+    <a name="top"></a>
+    <h2><a id="cb_post_title_url" href="https://www.cnblogs.com/lwme/archive/2012/08/18/jquery-flot-plugin.html">flot - jQuery 图表插件(jquery.flot)使用</a></h2>
+    <small>2012-08-18 23:50 by 囧月, <span id="post_view_count">26285</span> 阅读, <span id="post_comment_count">7</span> 评论, <a href="https://www.cnblogs.com/lwme/archive/2012/08/18/jquery-flot-plugin.html#" onclick="AddToWz(2645984);return false;">收藏</a>,  <a href="https://i.cnblogs.com/EditPosts.aspx?postid=2645984" rel="nofollow">编辑</a></small>
+    <div class="entry">
+        <div id="cnblogs_post_body" class="blogpost-body"><p><a href="http://code.google.com/p/flot/" target="_blank">Flot</a>是纯Javascript实现的基于jQuery的图表插件，主要支持线状图和柱状图的绘制(通过插件也可以支持饼状图)。</p>  <p>它的特点是使用简单、图形美观，支持鼠标跟踪及缩放功能。</p>  <p>Flot是基于canvas进行图表的绘制，可以在IE6+/Firefox2+/Safari3+/Opera9.5+/Chrome等主流浏览器上运行；其中IE9以下浏览器不支持canvas标记，需要额外引用<a href="http://excanvas.sourceforge.net/" target="_blank">excanvas</a>库(VML)来实现。</p>  <p><img src="./flot - jQuery 图表插件(jquery.flot)使用 - 囧月 - 博客园_files/flot-screenshot.png"></p>  <h1>基本使用</h1>  <p>首先，在页面头部引用脚本：</p>  <div><div id="highlighter_636100" class="syntaxhighlighter  js"><div class="toolbar"><span><a href="https://www.cnblogs.com/lwme/archive/2012/08/18/jquery-flot-plugin.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js plain">&lt;!--[</code><code class="js keyword">if</code> <code class="js plain">lte IE 8]&gt;&lt;script src=</code><code class="js string">"js/excanvas.min.js"</code><code class="js plain">&gt;&lt;/script&gt;&lt;![endif]--&gt;</code></div><div class="line number2 index1 alt1"><code class="js plain">&lt;script src=</code><code class="js string">"js/jquery.min.js"</code><code class="js plain">&gt;&lt;/script&gt;</code></div><div class="line number3 index2 alt2"><code class="js plain">&lt;script src=</code><code class="js string">"js/jquery.flot.min.js"</code><code class="js plain">&gt;&lt;/script&gt;</code></div></div></td></tr></tbody></table></div></div>
+
+<p>在页面中创建一个html标记，如div，然后通过样式来指定图表的大小：</p>
+
+<div><div id="highlighter_836354" class="syntaxhighlighter  xml"><div class="toolbar"><span><a href="https://www.cnblogs.com/lwme/archive/2012/08/18/jquery-flot-plugin.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="xml plain">&lt;</code><code class="xml keyword">div</code> <code class="xml plain">id="placeholder" style="width:600px;height:300px;"&gt;&lt;/</code><code class="xml keyword">div</code><code class="xml plain">&gt;</code></div></div></td></tr></tbody></table></div></div>
+
+<p>最后，在DOM Ready事件中调用Flot的绘制方法$.plot：</p>
+
+<div><div id="highlighter_866126" class="syntaxhighlighter  js"><div class="toolbar"><span><a href="https://www.cnblogs.com/lwme/archive/2012/08/18/jquery-flot-plugin.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js plain">$(</code><code class="js keyword">function</code> <code class="js plain">() {</code></div><div class="line number2 index1 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">$.plot($(</code><code class="js string">"#placeholder"</code><code class="js plain">), [[[0, 0], [1, 2]]]);</code></div><div class="line number3 index2 alt2"><code class="js plain">});</code></div></div></td></tr></tbody></table></div></div>
+
+<p>这样就简单的绘制了一条线。</p>
+
+<h1>数据格式</h1>
+
+<p>flot的数据格式是数组，数组中包含多个系列的数据，每个系列的数据对应一条线：</p>
+
+<div><div id="highlighter_612349" class="syntaxhighlighter  js"><div class="toolbar"><span><a href="https://www.cnblogs.com/lwme/archive/2012/08/18/jquery-flot-plugin.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js plain">[ series1, series2, ... ]</code></div></div></td></tr></tbody></table></div></div>
+
+<p>每一个系列的数据可以是一个数组或者对象。</p>
+
+<p><strong>数组格式的数据</strong>，每一个点都是一个数组(分x/y轴)：</p>
+
+<div><div id="highlighter_270087" class="syntaxhighlighter  js"><div class="toolbar"><span><a href="https://www.cnblogs.com/lwme/archive/2012/08/18/jquery-flot-plugin.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js plain">[ [x1, y1], [x2, y2], ... ]</code></div></div></td></tr></tbody></table></div></div>
+
+<p>如下定义了三个点：</p>
+
+<div><div id="highlighter_728626" class="syntaxhighlighter  js"><div class="toolbar"><span><a href="https://www.cnblogs.com/lwme/archive/2012/08/18/jquery-flot-plugin.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js plain">[ [1, 3], [2, 14.01], [3.5, 3.14] ]</code></div></div></td></tr></tbody></table></div></div>
+
+<p>绘制图表的时候，会把这三个点连接起来；假如中间有个点使用了空值即null，这个点的两边则不会连接起来：</p>
+
+<div><div id="highlighter_541777" class="syntaxhighlighter  js"><div class="toolbar"><span><a href="https://www.cnblogs.com/lwme/archive/2012/08/18/jquery-flot-plugin.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js plain">[ [1, 3], [2, 14.01], </code><code class="js keyword">null</code><code class="js plain">, [3.5, 3.14], [5, 8] ]</code></div></div></td></tr></tbody></table></div></div>
+
+<p><strong>需要注意的是，每个点的数据必须是数字，如果是字符串，可能会得到奇怪的错误。</strong></p>
+
+<p><strong>对象格式的数据</strong>，如下：</p>
+
+<div><div id="highlighter_120436" class="syntaxhighlighter  js"><div class="toolbar"><span><a href="https://www.cnblogs.com/lwme/archive/2012/08/18/jquery-flot-plugin.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div><div class="line number14 index13 alt1">14</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js plain">{</code></div><div class="line number2 index1 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">color: color or number&nbsp; </code><code class="js comments">//颜色，如果不设置会自动生成</code></div><div class="line number3 index2 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">data: rawdata </code><code class="js comments">//数据</code></div><div class="line number4 index3 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">label: string </code><code class="js comments">//用于图例说明</code></div><div class="line number5 index4 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">lines: specific lines options</code></div><div class="line number6 index5 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">bars: specific bars options</code></div><div class="line number7 index6 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">points: specific points options</code></div><div class="line number8 index7 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">xaxis: number</code></div><div class="line number9 index8 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">yaxis: number</code></div><div class="line number10 index9 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">clickable: boolean</code></div><div class="line number11 index10 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">hoverable: boolean</code></div><div class="line number12 index11 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">shadowSize: number</code></div><div class="line number13 index12 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">highlightColor: color or number</code></div><div class="line number14 index13 alt1"><code class="js plain">}</code></div></div></td></tr></tbody></table></div></div>
+
+<p>通常不需要关心其他选项，只需要指定label和data：</p>
+
+<div><div id="highlighter_116739" class="syntaxhighlighter  js"><div class="toolbar"><span><a href="https://www.cnblogs.com/lwme/archive/2012/08/18/jquery-flot-plugin.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js plain">{</code></div><div class="line number2 index1 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">label: </code><code class="js string">"y = 3"</code><code class="js plain">,</code></div><div class="line number3 index2 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">data: [[0, 3], [10, 3]]</code></div><div class="line number4 index3 alt1"><code class="js plain">}</code></div></div></td></tr></tbody></table></div></div>
+
+<p>对象格式的数据提供更大的灵活性，也更有利于代码的可读性，如下定义了两个系列即两条线：</p>
+
+<div><div id="highlighter_531921" class="syntaxhighlighter  js"><div class="toolbar"><span><a href="https://www.cnblogs.com/lwme/archive/2012/08/18/jquery-flot-plugin.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js plain">[ { label: </code><code class="js string">"Foo"</code><code class="js plain">, data: [ [10, 1], [17, -14], [30, 5] ] },</code></div><div class="line number2 index1 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">{ label: </code><code class="js string">"Bar"</code><code class="js plain">, data: [ [11, 13], [19, 11], [30, -7] ] }</code></div><div class="line number3 index2 alt2"><code class="js plain">]</code></div></div></td></tr></tbody></table></div></div>
+
+<h1>选项设置</h1>
+
+<p>所有的选项都是可选的，改变某个属性，只需要指定特定的属性名称：</p>
+
+<div><div id="highlighter_775990" class="syntaxhighlighter  js"><div class="toolbar"><span><a href="https://www.cnblogs.com/lwme/archive/2012/08/18/jquery-flot-plugin.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div><div class="line number14 index13 alt1">14</div><div class="line number15 index14 alt2">15</div><div class="line number16 index15 alt1">16</div><div class="line number17 index16 alt2">17</div><div class="line number18 index17 alt1">18</div><div class="line number19 index18 alt2">19</div><div class="line number20 index19 alt1">20</div><div class="line number21 index20 alt2">21</div><div class="line number22 index21 alt1">22</div><div class="line number23 index22 alt2">23</div><div class="line number24 index23 alt1">24</div><div class="line number25 index24 alt2">25</div><div class="line number26 index25 alt1">26</div><div class="line number27 index26 alt2">27</div><div class="line number28 index27 alt1">28</div><div class="line number29 index28 alt2">29</div><div class="line number30 index29 alt1">30</div><div class="line number31 index30 alt2">31</div><div class="line number32 index31 alt1">32</div><div class="line number33 index32 alt2">33</div><div class="line number34 index33 alt1">34</div><div class="line number35 index34 alt2">35</div><div class="line number36 index35 alt1">36</div><div class="line number37 index36 alt2">37</div><div class="line number38 index37 alt1">38</div><div class="line number39 index38 alt2">39</div><div class="line number40 index39 alt1">40</div><div class="line number41 index40 alt2">41</div><div class="line number42 index41 alt1">42</div><div class="line number43 index42 alt2">43</div><div class="line number44 index43 alt1">44</div><div class="line number45 index44 alt2">45</div><div class="line number46 index45 alt1">46</div><div class="line number47 index46 alt2">47</div><div class="line number48 index47 alt1">48</div><div class="line number49 index48 alt2">49</div><div class="line number50 index49 alt1">50</div><div class="line number51 index50 alt2">51</div><div class="line number52 index51 alt1">52</div><div class="line number53 index52 alt2">53</div><div class="line number54 index53 alt1">54</div><div class="line number55 index54 alt2">55</div><div class="line number56 index55 alt1">56</div><div class="line number57 index56 alt2">57</div><div class="line number58 index57 alt1">58</div><div class="line number59 index58 alt2">59</div><div class="line number60 index59 alt1">60</div><div class="line number61 index60 alt2">61</div><div class="line number62 index61 alt1">62</div><div class="line number63 index62 alt2">63</div><div class="line number64 index63 alt1">64</div><div class="line number65 index64 alt2">65</div><div class="line number66 index65 alt1">66</div><div class="line number67 index66 alt2">67</div><div class="line number68 index67 alt1">68</div><div class="line number69 index68 alt2">69</div><div class="line number70 index69 alt1">70</div><div class="line number71 index70 alt2">71</div><div class="line number72 index71 alt1">72</div><div class="line number73 index72 alt2">73</div><div class="line number74 index73 alt1">74</div><div class="line number75 index74 alt2">75</div><div class="line number76 index75 alt1">76</div><div class="line number77 index76 alt2">77</div><div class="line number78 index77 alt1">78</div><div class="line number79 index78 alt2">79</div><div class="line number80 index79 alt1">80</div><div class="line number81 index80 alt2">81</div><div class="line number82 index81 alt1">82</div><div class="line number83 index82 alt2">83</div><div class="line number84 index83 alt1">84</div><div class="line number85 index84 alt2">85</div><div class="line number86 index85 alt1">86</div><div class="line number87 index86 alt2">87</div><div class="line number88 index87 alt1">88</div><div class="line number89 index88 alt2">89</div><div class="line number90 index89 alt1">90</div><div class="line number91 index90 alt2">91</div><div class="line number92 index91 alt1">92</div><div class="line number93 index92 alt2">93</div><div class="line number94 index93 alt1">94</div><div class="line number95 index94 alt2">95</div><div class="line number96 index95 alt1">96</div><div class="line number97 index96 alt2">97</div><div class="line number98 index97 alt1">98</div><div class="line number99 index98 alt2">99</div><div class="line number100 index99 alt1">100</div><div class="line number101 index100 alt2">101</div><div class="line number102 index101 alt1">102</div><div class="line number103 index102 alt2">103</div><div class="line number104 index103 alt1">104</div><div class="line number105 index104 alt2">105</div><div class="line number106 index105 alt1">106</div><div class="line number107 index106 alt2">107</div><div class="line number108 index107 alt1">108</div><div class="line number109 index108 alt2">109</div><div class="line number110 index109 alt1">110</div><div class="line number111 index110 alt2">111</div><div class="line number112 index111 alt1">112</div><div class="line number113 index112 alt2">113</div><div class="line number114 index113 alt1">114</div><div class="line number115 index114 alt2">115</div><div class="line number116 index115 alt1">116</div><div class="line number117 index116 alt2">117</div><div class="line number118 index117 alt1">118</div><div class="line number119 index118 alt2">119</div><div class="line number120 index119 alt1">120</div><div class="line number121 index120 alt2">121</div><div class="line number122 index121 alt1">122</div><div class="line number123 index122 alt2">123</div><div class="line number124 index123 alt1">124</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js plain">{</code></div><div class="line number2 index1 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js comments">// 自定义数据系列</code></div><div class="line number3 index2 alt2"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">series: {</code></div><div class="line number4 index3 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js comments">//共有属性：点、线、柱状图的显示方式</code></div><div class="line number5 index4 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">lines, points, bars: {</code></div><div class="line number6 index5 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js comments">// 是否显示</code></div><div class="line number7 index6 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">show: boolean</code></div><div class="line number8 index7 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js comments">// 线宽度</code></div><div class="line number9 index8 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">lineWidth: number</code></div><div class="line number10 index9 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js comments">// 是否填充</code></div><div class="line number11 index10 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">fill: boolean or number</code></div><div class="line number12 index11 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js comments">// 填充色，如rgba(255, 255, 255, 0.8)</code></div><div class="line number13 index12 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">fillColor: </code><code class="js keyword">null</code> <code class="js plain">or color/gradient</code></div><div class="line number14 index13 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">}</code></div><div class="line number15 index14 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js comments">// 只针对点的属性</code></div><div class="line number16 index15 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">points: {</code></div><div class="line number17 index16 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js comments">//点的半径</code></div><div class="line number18 index17 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">radius: number</code></div><div class="line number19 index18 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js comments">// 绘制点的方法，默认为内置的圆形，可以通过自定义函数来定义其他形状</code></div><div class="line number20 index19 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">symbol: </code><code class="js string">"circle"</code> <code class="js plain">or </code><code class="js keyword">function</code></div><div class="line number21 index20 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">}</code></div><div class="line number22 index21 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js comments">// 只针对柱状图的属性</code></div><div class="line number23 index22 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">bars: {</code></div><div class="line number24 index23 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">barWidth: number</code></div><div class="line number25 index24 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">align: </code><code class="js string">"left"</code><code class="js plain">, </code><code class="js string">"right"</code> <code class="js plain">or </code><code class="js string">"center"</code></div><div class="line number26 index25 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">horizontal: boolean</code></div><div class="line number27 index26 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">}</code></div><div class="line number28 index27 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js comments">// 只针对线的属性</code></div><div class="line number29 index28 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">lines: {</code></div><div class="line number30 index29 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js comments">// 指定两个点之间是用水平线还是垂直线连接</code></div><div class="line number31 index30 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">steps: boolean</code></div><div class="line number32 index31 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">}</code></div><div class="line number33 index32 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js comments">// 设置阴影的大小，0消除阴影</code></div><div class="line number34 index33 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">shadowSize: number</code></div><div class="line number35 index34 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js comments">// 鼠标悬停时的颜色</code></div><div class="line number36 index35 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">highlightColor: color or number</code></div><div class="line number37 index36 alt2"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">}</code></div><div class="line number38 index37 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js comments">// 设置各个对应的数据序列，即线的颜色</code></div><div class="line number39 index38 alt2"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">colors: [ color1, color2, ... ]</code></div><div class="line number40 index39 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js comments">// 网格设置</code></div><div class="line number41 index40 alt2"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">grid: {</code></div><div class="line number42 index41 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js comments">// 是否显示格子</code></div><div class="line number43 index42 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">show: boolean</code></div><div class="line number44 index43 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js comments">// 数据的线是否绘制在网格线下</code></div><div class="line number45 index44 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">aboveData: boolean</code></div><div class="line number46 index45 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js comments">// 网格线颜色</code></div><div class="line number47 index46 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">color: color</code></div><div class="line number48 index47 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js comments">// 网格背景颜色</code></div><div class="line number49 index48 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">backgroundColor: color/gradient or </code><code class="js keyword">null</code></div><div class="line number50 index49 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">margin: number or margin object({top,left,bottom,right})</code></div><div class="line number51 index50 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js comments">// 刻度与网格间距</code></div><div class="line number52 index51 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">labelMargin: number</code></div><div class="line number53 index52 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">axisMargin: number</code></div><div class="line number54 index53 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">markings: array of markings or (fn: axes -&gt; array of markings)</code></div><div class="line number55 index54 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js comments">// 边框宽度</code></div><div class="line number56 index55 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">borderWidth: number</code></div><div class="line number57 index56 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js comments">// 边框颜色</code></div><div class="line number58 index57 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">borderColor: color or </code><code class="js keyword">null</code></div><div class="line number59 index58 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">minBorderMargin: number or </code><code class="js keyword">null</code></div><div class="line number60 index59 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js comments">// 监听鼠标点击，会生成plotclick事件</code></div><div class="line number61 index60 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">clickable: boolean</code></div><div class="line number62 index61 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js comments">// 监听鼠标移动，会生成plothover事件</code></div><div class="line number63 index62 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">hoverable: boolean</code></div><div class="line number64 index63 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js comments">// 鼠标附近元素高亮显示</code></div><div class="line number65 index64 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">autoHighlight: boolean</code></div><div class="line number66 index65 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">mouseActiveRadius: number</code></div><div class="line number67 index66 alt2"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">}</code></div><div class="line number68 index67 alt1">&nbsp;</div><div class="line number69 index68 alt2"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">interaction: {</code></div><div class="line number70 index69 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js comments">// 最大重绘延迟</code></div><div class="line number71 index70 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">redrawOverlayInterval: number or -1</code></div><div class="line number72 index71 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">}</code></div><div class="line number73 index72 alt2"><code class="js spaces">&nbsp;&nbsp;</code><code class="js comments">// x,y轴的设置</code></div><div class="line number74 index73 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">xaxis, yaxis: {</code></div><div class="line number75 index74 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">show: </code><code class="js keyword">null</code> <code class="js plain">or </code><code class="js keyword">true</code><code class="js plain">/</code><code class="js keyword">false</code></div><div class="line number76 index75 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js comments">// 刻度文字显示的位置</code></div><div class="line number77 index76 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">position: </code><code class="js string">"bottom"</code> <code class="js plain">or </code><code class="js string">"top"</code> <code class="js plain">or </code><code class="js string">"left"</code> <code class="js plain">or </code><code class="js string">"right"</code></div><div class="line number78 index77 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js comments">// 设置成time类型时可以用时间作为数据</code></div><div class="line number79 index78 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">mode: </code><code class="js keyword">null</code> <code class="js plain">or </code><code class="js string">"time"</code> <code class="js plain">(</code><code class="js string">"time"</code> <code class="js plain">requires jquery.flot.time.js plugin)</code></div><div class="line number80 index79 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js comments">// 时区，仅用于time模式</code></div><div class="line number81 index80 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">timezone: </code><code class="js keyword">null</code><code class="js plain">, </code><code class="js string">"browser"</code> <code class="js plain">or timezone (only makes sense </code><code class="js keyword">for</code> <code class="js plain">mode: </code><code class="js string">"time"</code><code class="js plain">)</code></div><div class="line number82 index81 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js comments">// 轴文字和刻度文字颜色</code></div><div class="line number83 index82 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">color: </code><code class="js keyword">null</code> <code class="js plain">or color spec</code></div><div class="line number84 index83 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js comments">// 单独定义刻度文字颜色</code></div><div class="line number85 index84 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">tickColor: </code><code class="js keyword">null</code> <code class="js plain">or color spec</code></div><div class="line number86 index85 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">font: </code><code class="js keyword">null</code> <code class="js plain">or font spec object</code></div><div class="line number87 index86 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js comments">// 最大最小只范围，不设置则自动计算</code></div><div class="line number88 index87 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">min: </code><code class="js keyword">null</code> <code class="js plain">or number</code></div><div class="line number89 index88 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">max: </code><code class="js keyword">null</code> <code class="js plain">or number</code></div><div class="line number90 index89 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">autoscaleMargin: </code><code class="js keyword">null</code> <code class="js plain">or number</code></div><div class="line number91 index90 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js comments">// 对数据进行计算后再绘制</code></div><div class="line number92 index91 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">transform: </code><code class="js keyword">null</code> <code class="js plain">or fn: number -&gt; number</code></div><div class="line number93 index92 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">inverseTransform: </code><code class="js keyword">null</code> <code class="js plain">or fn: number -&gt; number</code></div><div class="line number94 index93 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js comments">// 用于自定义刻度显示</code></div><div class="line number95 index94 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">ticks: </code><code class="js keyword">null</code> <code class="js plain">or number or ticks array or (fn: axis -&gt; ticks array)</code></div><div class="line number96 index95 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">tickSize: number or array</code></div><div class="line number97 index96 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">minTickSize: number or array</code></div><div class="line number98 index97 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js comments">// 格式化刻度显示</code></div><div class="line number99 index98 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">tickFormatter: (fn: number, object -&gt; string) or string</code></div><div class="line number100 index99 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js comments">// 刻度显示精确度，即小数位数</code></div><div class="line number101 index100 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">tickDecimals: </code><code class="js keyword">null</code> <code class="js plain">or number</code></div><div class="line number102 index101 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js comments">// 刻度区域大小</code></div><div class="line number103 index102 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">labelWidth: </code><code class="js keyword">null</code> <code class="js plain">or number</code></div><div class="line number104 index103 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">labelHeight: </code><code class="js keyword">null</code> <code class="js plain">or number</code></div><div class="line number105 index104 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">reserveSpace: </code><code class="js keyword">null</code> <code class="js plain">or </code><code class="js keyword">true</code></div><div class="line number106 index105 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>&nbsp;</div><div class="line number107 index106 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">tickLength: </code><code class="js keyword">null</code> <code class="js plain">or number</code></div><div class="line number108 index107 alt1">&nbsp;</div><div class="line number109 index108 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">alignTicksWithAxis: </code><code class="js keyword">null</code> <code class="js plain">or number</code></div><div class="line number110 index109 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">}</code></div><div class="line number111 index110 alt2"><code class="js spaces">&nbsp;&nbsp;</code><code class="js comments">// 定义多个坐标轴</code></div><div class="line number112 index111 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">xaxes: []</code></div><div class="line number113 index112 alt2"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">yaxes: []</code></div><div class="line number114 index113 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js comments">// 图例</code></div><div class="line number115 index114 alt2"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">legend: {</code></div><div class="line number116 index115 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">show: boolean</code></div><div class="line number117 index116 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js comments">// 格式化图例的显示</code></div><div class="line number118 index117 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">labelFormatter: </code><code class="js keyword">null</code> <code class="js plain">or (fn: string, series object -&gt; string)</code></div><div class="line number119 index118 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">labelBoxBorderColor: color</code></div><div class="line number120 index119 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">noColumns: number</code></div><div class="line number121 index120 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">position: </code><code class="js string">"ne"</code> <code class="js plain">or </code><code class="js string">"nw"</code> <code class="js plain">or </code><code class="js string">"se"</code> <code class="js plain">or </code><code class="js string">"sw"</code></div><div class="line number122 index121 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">margin: number of pixels or [x margin, y margin]</code></div><div class="line number123 index122 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">backgroundColor: </code><code class="js keyword">null</code> <code class="js plain">or color</code></div><div class="line number124 index123 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">backgroundOpacity: number between 0 and 1</code></div></div></td></tr></tbody></table></div></div>
+
+<div><div id="highlighter_236062" class="syntaxhighlighter  js"><div class="toolbar"><span><a href="https://www.cnblogs.com/lwme/archive/2012/08/18/jquery-flot-plugin.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js comments">//图例的容器，用于从图表中分离</code></div><div class="line number2 index1 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">container: </code><code class="js keyword">null</code> <code class="js plain">or jQuery object/DOM element/jQuery expression</code></div><div class="line number3 index2 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">sorted: </code><code class="js keyword">null</code><code class="js plain">/</code><code class="js keyword">false</code><code class="js plain">, </code><code class="js keyword">true</code><code class="js plain">, </code><code class="js string">"ascending"</code><code class="js plain">, </code><code class="js string">"descending"</code> <code class="js plain">or a comparator</code></div><div class="line number4 index3 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">}</code></div><div class="line number5 index4 alt2"><code class="js plain">}</code></div></div></td></tr></tbody></table></div></div>
+
+<p>&nbsp;</p>
+
+<h2>格式化图例的显示</h2>
+
+<p>通过legend参数的labelFormatter参数来格式化图例的显示，其中series为一个对象(属性参考对象格式的数据)：</p>
+
+<div><div id="highlighter_748700" class="syntaxhighlighter  js"><div class="toolbar"><span><a href="https://www.cnblogs.com/lwme/archive/2012/08/18/jquery-flot-plugin.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js plain">labelFormatter: </code><code class="js keyword">function</code> <code class="js plain">(label, series) {</code></div><div class="line number2 index1 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js comments">// series is the series object for the label </code></div><div class="line number3 index2 alt2"><code class="js spaces">&nbsp;&nbsp;</code><code class="js keyword">return</code> <code class="js string">'&lt;a href="#'</code> <code class="js plain">+ label + </code><code class="js string">'" title="'</code> <code class="js plain">+ series.label + </code><code class="js string">'"&gt;'</code> <code class="js plain">+ label + </code><code class="js string">'&lt;/a&gt;'</code><code class="js plain">;</code></div><div class="line number4 index3 alt1"><code class="js plain">}</code></div></div></td></tr></tbody></table></div></div>
+
+<p>&nbsp;</p>
+
+<h2>轴的设置</h2>
+
+<p>自定义刻度的显示，可以通过ticks参数来设置，如下定义X轴：</p>
+
+<div><div id="highlighter_728625" class="syntaxhighlighter  js"><div class="toolbar"><span><a href="https://www.cnblogs.com/lwme/archive/2012/08/18/jquery-flot-plugin.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js plain">xaxis: {</code></div><div class="line number2 index1 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">ticks: [0, 2, 4, 8, 10, 15]</code></div><div class="line number3 index2 alt2"><code class="js plain">}</code></div></div></td></tr></tbody></table></div></div>
+
+<p>这样轴上只会显示以上定义的刻度。当有时候数据超出这个范围时，部分刻度会被隐藏，这时候就需要手动指定min/max参数，如下：</p>
+
+<div><div id="highlighter_548335" class="syntaxhighlighter  js"><div class="toolbar"><span><a href="https://www.cnblogs.com/lwme/archive/2012/08/18/jquery-flot-plugin.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js plain">$.plot($(</code><code class="js string">"#placeholder"</code><code class="js plain">), </code></div><div class="line number2 index1 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">[{ label: </code><code class="js string">"Foo"</code><code class="js plain">, data: [[10, 1], [17, -14], [30, 5]] },</code></div><div class="line number3 index2 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">{ label: </code><code class="js string">"Bar"</code><code class="js plain">, data: [[11, 13], [19, 11], [30, -7]] }</code></div><div class="line number4 index3 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">],</code></div><div class="line number5 index4 alt2"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">{</code></div><div class="line number6 index5 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">xaxis: {</code></div><div class="line number7 index6 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">ticks: [0, 2, 4, 8, 10, 15],</code></div><div class="line number8 index7 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">min: 0,</code></div><div class="line number9 index8 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">max: 30</code></div><div class="line number10 index9 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">}</code></div><div class="line number11 index10 alt2"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">}</code></div><div class="line number12 index11 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">);</code></div></div></td></tr></tbody></table></div></div>
+
+<p>ticks参数还可以定制刻度显示的文字：</p>
+
+<div><div id="highlighter_264977" class="syntaxhighlighter  js"><div class="toolbar"><span><a href="https://www.cnblogs.com/lwme/archive/2012/08/18/jquery-flot-plugin.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js plain">ticks: [[0, </code><code class="js string">"零"</code><code class="js plain">], [2, </code><code class="js string">"二"</code><code class="js plain">], [4, </code><code class="js string">"四"</code><code class="js plain">], [8, </code><code class="js string">"八"</code><code class="js plain">], [10, </code><code class="js string">"十"</code><code class="js plain">], [15, </code><code class="js string">"十五"</code><code class="js plain">]]</code></div></div></td></tr></tbody></table></div></div>
+
+<p>最强大的还是通过自定义函数，通过tickFormatter参数：</p>
+
+<div><div id="highlighter_207211" class="syntaxhighlighter  js"><div class="toolbar"><span><a href="https://www.cnblogs.com/lwme/archive/2012/08/18/jquery-flot-plugin.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js plain">tickFormatter: </code><code class="js keyword">function</code><code class="js plain">(axis) {</code></div><div class="line number2 index1 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js keyword">return</code> <code class="js string">"数字"</code> <code class="js plain">+ axis.toString();</code></div><div class="line number3 index2 alt2"><code class="js plain">}</code></div></div></td></tr></tbody></table></div></div>
+
+<p>&nbsp;</p>
+
+<h2>绘制多个刻度轴</h2>
+
+<p>如下，绘制两个y轴，同时需要在数据中指定属于哪个轴：</p>
+
+<div><div id="highlighter_657977" class="syntaxhighlighter  js"><div class="toolbar"><span><a href="https://www.cnblogs.com/lwme/archive/2012/08/18/jquery-flot-plugin.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js plain">$.plot($(</code><code class="js string">"#placeholder"</code><code class="js plain">), </code></div><div class="line number2 index1 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">[ { label: </code><code class="js string">"Foo"</code><code class="js plain">, data: [[10, 1], [17, -14], [30, 5]] },</code></div><div class="line number3 index2 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">{ label: </code><code class="js string">"Bar"</code><code class="js plain">, data: [[11, 13], [19, 11], [30, -7]] },</code></div><div class="line number4 index3 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">{ label: </code><code class="js string">"Three"</code><code class="js plain">, data: [[2, 6], [5, 8], [18, 15]], yaxis: 2 },</code></div><div class="line number5 index4 alt2"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">],</code></div><div class="line number6 index5 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">{</code></div><div class="line number7 index6 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">xaxes: [{ position: </code><code class="js string">"bottom"</code> <code class="js plain">}],</code></div><div class="line number8 index7 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">yaxes: [{ position: </code><code class="js string">"left"</code> <code class="js plain">}, { position: </code><code class="js string">"right"</code><code class="js plain">, min: 2 }]</code></div><div class="line number9 index8 alt2"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">}</code></div><div class="line number10 index9 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">);</code></div></div></td></tr></tbody></table></div></div>
+
+<p>&nbsp;</p>
+
+<h2>时间格式的数据</h2>
+
+<p>使用时间格式的数据需要引用jquery.flot.time.js，它支持以下格式的时间格式化：</p>
+
+<div><div id="highlighter_755464" class="syntaxhighlighter  text"><div class="toolbar"><span><a href="https://www.cnblogs.com/lwme/archive/2012/08/18/jquery-flot-plugin.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div><div class="line number14 index13 alt1">14</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="text plain">%a: weekday name (customizable)</code></div><div class="line number2 index1 alt1"><code class="text plain">%b: month name (customizable)</code></div><div class="line number3 index2 alt2"><code class="text plain">%d: day of month, zero-padded (01-31)</code></div><div class="line number4 index3 alt1"><code class="text plain">%e: day of month, space-padded ( 1-31)</code></div><div class="line number5 index4 alt2"><code class="text plain">%H: hours, 24-hour time, zero-padded (00-23)</code></div><div class="line number6 index5 alt1"><code class="text plain">%I: hours, 12-hour time, zero-padded (01-12)</code></div><div class="line number7 index6 alt2"><code class="text plain">%m: month, zero-padded (01-12)</code></div><div class="line number8 index7 alt1"><code class="text plain">%M: minutes, zero-padded (00-59)</code></div><div class="line number9 index8 alt2"><code class="text plain">%S: seconds, zero-padded (00-59)</code></div><div class="line number10 index9 alt1"><code class="text plain">%y: year (two digits)</code></div><div class="line number11 index10 alt2"><code class="text plain">%Y: year (four digits)</code></div><div class="line number12 index11 alt1"><code class="text plain">%p: am/pm</code></div><div class="line number13 index12 alt2"><code class="text plain">%P: AM/PM (uppercase version of %p)</code></div><div class="line number14 index13 alt1"><code class="text plain">%w: weekday as number (0-6, 0 being Sunday)</code></div></div></td></tr></tbody></table></div></div>
+
+<p>还支持自定义月份、一周中每一天的名称：</p>
+
+<div><div id="highlighter_908800" class="syntaxhighlighter  text"><div class="toolbar"><span><a href="https://www.cnblogs.com/lwme/archive/2012/08/18/jquery-flot-plugin.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="text plain">monthNames: ["jan", "feb", "mar", "apr", "maj", "jun", "jul", "aug", "sep", "okt", "nov", "dec"]</code></div><div class="line number2 index1 alt1"><code class="text plain">dayNames: ["dim", "lun", "mar", "mer", "jeu", "ven", "sam"]</code></div></div></td></tr></tbody></table></div></div>
+
+<p>使用如下：</p>
+
+<div><div id="highlighter_494583" class="syntaxhighlighter  js"><div class="toolbar"><span><a href="https://www.cnblogs.com/lwme/archive/2012/08/18/jquery-flot-plugin.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js plain">$.plot($(</code><code class="js string">"#placeholder"</code><code class="js plain">),</code></div><div class="line number2 index1 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;</code><code class="js plain">[{ label: </code><code class="js string">"Foo"</code><code class="js plain">, data: [[</code><code class="js keyword">new</code> <code class="js plain">Date(2010, 1, 1), 1], [</code><code class="js keyword">new</code> <code class="js plain">Date(2010, 5, 1), -14], [</code><code class="js keyword">new</code> <code class="js plain">Date(2010, 10, 1), 5]] },</code></div><div class="line number3 index2 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">{ label: </code><code class="js string">"Bar"</code><code class="js plain">, data: [[</code><code class="js keyword">new</code> <code class="js plain">Date(2010, 2, 1), 13], [</code><code class="js keyword">new</code> <code class="js plain">Date(2010, 6, 1), 11], [</code><code class="js keyword">new</code> <code class="js plain">Date(2010, 12, 1), -7]] }</code></div><div class="line number4 index3 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;</code><code class="js plain">],</code></div><div class="line number5 index4 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;</code><code class="js plain">{</code></div><div class="line number6 index5 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">xaxis: {</code></div><div class="line number7 index6 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">mode: </code><code class="js string">"time"</code><code class="js plain">,</code></div><div class="line number8 index7 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">timeformat: </code><code class="js string">"%y/%m/%d"</code></div><div class="line number9 index8 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">}</code></div><div class="line number10 index9 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;</code><code class="js plain">}</code></div><div class="line number11 index10 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;</code><code class="js plain">);</code></div></div></td></tr></tbody></table></div></div>
+
+<p>当然，如果不使用timeformat的话，也可以用tickFormatter来格式化显示：</p>
+
+<div><div id="highlighter_84152" class="syntaxhighlighter  js"><div class="toolbar"><span><a href="https://www.cnblogs.com/lwme/archive/2012/08/18/jquery-flot-plugin.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js plain">tickFormatter: </code><code class="js keyword">function</code> <code class="js plain">(val, axis) {</code></div><div class="line number2 index1 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js keyword">var</code> <code class="js plain">d = </code><code class="js keyword">new</code> <code class="js plain">Date(val);</code></div><div class="line number3 index2 alt2"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">console.log(val)</code></div><div class="line number4 index3 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js keyword">return</code> <code class="js plain">(d.getUTCMonth() + 1) + </code><code class="js string">"/"</code> <code class="js plain">+ d.getUTCDate() + </code><code class="js string">"/"</code> <code class="js plain">+ d.getFullYear();</code></div><div class="line number5 index4 alt2"><code class="js plain">}</code></div></div></td></tr></tbody></table></div></div>
+
+<p>&nbsp;</p>
+
+<h2>特殊的显示需求</h2>
+
+<p>可能需要在同一个点上进行时间的对比，比如x轴：</p>
+
+<div><div id="highlighter_415928" class="syntaxhighlighter  js"><div class="toolbar"><span><a href="https://www.cnblogs.com/lwme/archive/2012/08/18/jquery-flot-plugin.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div><div class="line number14 index13 alt1">14</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js plain">$.plot($(</code><code class="js string">"#placeholder"</code><code class="js plain">),</code></div><div class="line number2 index1 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;</code><code class="js plain">[ { label: </code><code class="js string">"Foo"</code><code class="js plain">, data: [[1, </code><code class="js keyword">new</code> <code class="js plain">Date(2010, 1, 1)], [2, </code><code class="js keyword">new</code> <code class="js plain">Date(2010, 5, 1)], [3, </code><code class="js keyword">new</code> <code class="js plain">Date(2010, 10, 1)]] },</code></div><div class="line number3 index2 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">{ label: </code><code class="js string">"Bar"</code><code class="js plain">, data: [[1, </code><code class="js keyword">new</code> <code class="js plain">Date(2010, 2, 1)], [2, </code><code class="js keyword">new</code> <code class="js plain">Date(2010, 6, 1)], [3, </code><code class="js keyword">new</code> <code class="js plain">Date(2010, 12, 1)]] }</code></div><div class="line number4 index3 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;</code><code class="js plain">],</code></div><div class="line number5 index4 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;</code><code class="js plain">{</code></div><div class="line number6 index5 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">yaxis: {</code></div><div class="line number7 index6 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">mode: </code><code class="js string">"time"</code><code class="js plain">,</code></div><div class="line number8 index7 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">timeformat: </code><code class="js string">"%y/%m/%d"</code></div><div class="line number9 index8 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">},</code></div><div class="line number10 index9 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">xaxis: {</code></div><div class="line number11 index10 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">ticks: [[1, </code><code class="js string">"一"</code><code class="js plain">], [2, </code><code class="js string">"二"</code><code class="js plain">], [3, </code><code class="js string">"三"</code><code class="js plain">]]</code></div><div class="line number12 index11 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">}</code></div><div class="line number13 index12 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;</code><code class="js plain">}</code></div><div class="line number14 index13 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;</code><code class="js plain">);</code></div></div></td></tr></tbody></table></div></div>
+
+<p>在以上方法中，把x轴和x轴刻度的值一一对应，当然也可以换成y轴。</p>
+
+<p>&nbsp;</p>
+
+<h2>控制线和点的显示</h2>
+
+<p>通过series参数，可以控制线的填充、点的显示(点默认是不显示的)：</p>
+
+<div><div id="highlighter_613534" class="syntaxhighlighter  js"><div class="toolbar"><span><a href="https://www.cnblogs.com/lwme/archive/2012/08/18/jquery-flot-plugin.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js plain">series: {</code></div><div class="line number2 index1 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">lines: { show: </code><code class="js keyword">true</code><code class="js plain">, fill:</code><code class="js keyword">true</code> <code class="js plain">},</code></div><div class="line number3 index2 alt2"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">points: { show: </code><code class="js keyword">true</code><code class="js plain">, fill: </code><code class="js keyword">false</code> <code class="js plain">}</code></div><div class="line number4 index3 alt1"><code class="js plain">}</code></div></div></td></tr></tbody></table></div></div>
+
+<p>&nbsp;</p>
+
+<h2>颜色的控制</h2>
+
+<p>flot有多个参数都用到了颜色，均可以通过定义单个、或多个颜色来控制每个数据呈现的颜色：</p>
+
+<div><div id="highlighter_932796" class="syntaxhighlighter  js"><div class="toolbar"><span><a href="https://www.cnblogs.com/lwme/archive/2012/08/18/jquery-flot-plugin.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js plain">colors: [</code><code class="js string">"#d18b2c"</code><code class="js plain">, </code><code class="js string">"#dba255"</code><code class="js plain">, </code><code class="js string">"#919733"</code><code class="js plain">]</code></div></div></td></tr></tbody></table></div></div>
+
+<p>再比如网格的背景色：</p>
+
+<div><div id="highlighter_749091" class="syntaxhighlighter  js"><div class="toolbar"><span><a href="https://www.cnblogs.com/lwme/archive/2012/08/18/jquery-flot-plugin.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js plain">grid: {</code></div><div class="line number2 index1 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">backgroundColor: { colors: [</code><code class="js string">"#000"</code><code class="js plain">, </code><code class="js string">"#999"</code><code class="js plain">] }</code></div><div class="line number3 index2 alt2"><code class="js plain">}</code></div></div></td></tr></tbody></table></div></div>
+
+<p>颜色还有更加详细的选项来定义：</p>
+
+<div><div id="highlighter_289544" class="syntaxhighlighter  js"><div class="toolbar"><span><a href="https://www.cnblogs.com/lwme/archive/2012/08/18/jquery-flot-plugin.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js plain">{ colors: [{ opacity: 0.8 }, { brightness: 0.6, opacity: 0.8 } ] }</code></div></div></td></tr></tbody></table></div></div>
+
+<p>&nbsp;</p>
+
+<h2>跟踪鼠标事件</h2>
+
+<p>主要有鼠标移动和点击事件，需要先开启相应开关：</p>
+
+<div><div id="highlighter_712548" class="syntaxhighlighter  js"><div class="toolbar"><span><a href="https://www.cnblogs.com/lwme/archive/2012/08/18/jquery-flot-plugin.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js plain">grid: {</code></div><div class="line number2 index1 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">clickable: </code><code class="js keyword">true</code><code class="js plain">,</code></div><div class="line number3 index2 alt2"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">hoverable: </code><code class="js keyword">true</code></div><div class="line number4 index3 alt1"><code class="js plain">}</code></div></div></td></tr></tbody></table></div></div>
+
+<p>然后再绑定相应的事件，如点击事件：</p>
+
+<div><div id="highlighter_132748" class="syntaxhighlighter  js"><div class="toolbar"><span><a href="https://www.cnblogs.com/lwme/archive/2012/08/18/jquery-flot-plugin.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js plain">$(</code><code class="js string">"#placeholder"</code><code class="js plain">).bind(</code><code class="js string">"plotclick"</code><code class="js plain">, </code><code class="js keyword">function</code> <code class="js plain">(event, pos, item) {</code></div><div class="line number2 index1 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">console.log(</code><code class="js string">"You clicked at "</code> <code class="js plain">+ pos.x + </code><code class="js string">", "</code> <code class="js plain">+ pos.y);</code></div><div class="line number3 index2 alt2"><code class="js spaces">&nbsp;&nbsp;</code><code class="js comments">// axis coordinates for other axes, if present, are in pos.x2, pos.x3, ...</code></div><div class="line number4 index3 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js comments">// if you need global screen coordinates, they are pos.pageX, pos.pageY</code></div><div class="line number5 index4 alt2">&nbsp;</div><div class="line number6 index5 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js keyword">if</code> <code class="js plain">(item) {</code></div><div class="line number7 index6 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">console.log(item.series, item.datapoint);</code></div><div class="line number8 index7 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">console.log(</code><code class="js string">"You clicked a point!"</code><code class="js plain">);</code></div><div class="line number9 index8 alt2"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">}</code></div><div class="line number10 index9 alt1"><code class="js plain">});</code></div></div></td></tr></tbody></table></div></div>
+
+<p>plothover事件的的绑定也一样。item对象主要有以下属性：</p>
+
+<div><div id="highlighter_1574" class="syntaxhighlighter  js"><div class="toolbar"><span><a href="https://www.cnblogs.com/lwme/archive/2012/08/18/jquery-flot-plugin.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js plain">item: {</code></div><div class="line number2 index1 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">datapoint: the point, e.g. [0, 2]</code></div><div class="line number3 index2 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">dataIndex: the index of the point </code><code class="js keyword">in</code> <code class="js plain">the data array</code></div><div class="line number4 index3 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">series: the series object</code></div><div class="line number5 index4 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">seriesIndex: the index of the series</code></div><div class="line number6 index5 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">pageX, pageY: the global screen coordinates of the point</code></div><div class="line number7 index6 alt2"><code class="js plain">}</code></div></div></td></tr></tbody></table></div></div>
+
+<p>&nbsp;</p>
+
+<h1>内置方法</h1>
+
+<ul>
+  <li>highlight(series, datapoint)：高亮显示point</li>
+
+  <li>unhighlight(series, datapoint) or unhighlight()：取消高亮point，没有参数则取消高亮当前的point</li>
+
+  <li>setData(data)：重新设置数据，需要调用draw()方法来重绘</li>
+
+  <li>setupGrid()：重新计算坐标、轴，需要调用draw()方法来重绘</li>
+
+  <li>draw()：重绘图表</li>
+
+  <li>triggerRedrawOverlay()：更新可交互的区域，如point</li>
+
+  <li>width()/height()：获取宽高</li>
+
+  <li>offset()：获取偏移</li>
+
+  <li>pointOffset({ x: xpos, y: ypos })：获取某个点相对于placeholder的div的偏移</li>
+
+  <li>resize()：调整图表的大小</li>
+
+  <li>shutdown()：清理即取消绑定所有事件处理函数</li>
+</ul>
+
+<p>还有一些其他函数，但需要你比较了解flot内部运作，否则可能产生不好的结果：</p>
+
+<ul>
+  <li>getData()：获取数据，即在$.plot方法中定义的数据</li>
+
+  <li>getAxes()：获取坐标轴</li>
+
+  <li>getPlaceholder()：获取placeholder元素</li>
+
+  <li>getCanvas()：获取canvas对象</li>
+
+  <li>getPlotOffset()：获取偏移</li>
+
+  <li>getOptions()：获取设置的选项</li>
+</ul>
+
+<p>如highlight方法，就可以在click事件中使用：</p>
+
+<div><div id="highlighter_666482" class="syntaxhighlighter  js"><div class="toolbar"><span><a href="https://www.cnblogs.com/lwme/archive/2012/08/18/jquery-flot-plugin.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js keyword">var</code> <code class="js plain">pl = $.plot($(</code><code class="js string">"#placeholder"</code><code class="js plain">), data, options);</code></div><div class="line number2 index1 alt1">&nbsp;</div><div class="line number3 index2 alt2"><code class="js spaces">&nbsp;</code><code class="js plain">$(</code><code class="js string">"#placeholder"</code><code class="js plain">).bind(</code><code class="js string">"plotclick"</code><code class="js plain">, </code><code class="js keyword">function</code> <code class="js plain">(event, pos, item) {</code></div><div class="line number4 index3 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;</code><code class="js keyword">if</code> <code class="js plain">(item) {</code></div><div class="line number5 index4 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">pl.highlight(item.series, item.datapoint);</code></div><div class="line number6 index5 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;</code><code class="js plain">}</code></div><div class="line number7 index6 alt2"><code class="js spaces">&nbsp;</code><code class="js plain">});</code></div></div></td></tr></tbody></table></div></div>
+
+<p>flot还提供了一些函数，用于在绘图各个流程步骤中进行一些额外的处理，这里不再列出。</p>
+
+<p>&nbsp;</p>
+
+<h1>相关资源</h1>
+
+<p>插件主页：<a title="http://code.google.com/p/flot/" href="http://code.google.com/p/flot/" target="_blank">http://code.google.com/p/flot/</a>&nbsp;&nbsp; (API文档：<a title="http://people.iola.dk/olau/flot/API.txt" href="http://people.iola.dk/olau/flot/API.txt" target="_blank">http://people.iola.dk/olau/flot/API.txt</a>)</p>
+
+<p>最新版本：<a title="https://github.com/flot/flot" href="https://github.com/flot/flot" target="_blank">https://github.com/flot/flot</a>&nbsp; (API文档：<a title="https://github.com/flot/flot/blob/master/API.md" href="https://github.com/flot/flot/blob/master/API.md" target="_blank">https://github.com/flot/flot/blob/master/API.md</a>)</p>
+
+<p>在线DEMO：<a title="http://people.iola.dk/olau/flot/examples/" href="http://people.iola.dk/olau/flot/examples/" target="_blank">http://people.iola.dk/olau/flot/examples/</a></p>
+
+<p>Flot的插件：<a title="http://code.google.com/p/flot/wiki/Plugins" href="http://code.google.com/p/flot/wiki/Plugins" target="_blank">http://code.google.com/p/flot/wiki/Plugins</a> (实现更多类型的图表)</p></div><div id="MySignature" style="display: block;"><p>作者：<a style="color:#399AB2" href="http://lwme.cnblogs.com/" target="_blank">囧月</a><br>
+出处：<a style="color:#399AB2" href="http://lwme.cnblogs.com/" target="_blank">http://lwme.cnblogs.com/</a><br>
+本文版权归作者和博客园共有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利。</p></div>
+        <div class="clear"></div>
+        <div id="blog_post_info_block">
+        <div id="blog_post_info"><div id="green_channel">
+        <a href="javascript:void(0);" id="green_channel_digg" onclick="DiggIt(2645984,cb_blogId,1);green_channel_success(this,&#39;谢谢推荐！&#39;);">好文要顶</a>
+            <a id="green_channel_follow" onclick="follow(&#39;a7d8b0ea-cb3c-df11-ba8f-001cf0cd104b&#39;);" href="javascript:void(0);">关注我</a>
+    <a id="green_channel_favorite" onclick="AddToWz(cb_entryId);return false;" href="javascript:void(0);">收藏该文</a>
+    <a id="green_channel_weibo" href="javascript:void(0);" title="分享至新浪微博" onclick="ShareToTsina()"><img src="./flot - jQuery 图表插件(jquery.flot)使用 - 囧月 - 博客园_files/icon_weibo_24.png" alt=""></a>
+    <a id="green_channel_wechat" href="javascript:void(0);" title="分享至微信" onclick="shareOnWechat()"><img src="./flot - jQuery 图表插件(jquery.flot)使用 - 囧月 - 博客园_files/wechat.png" alt=""></a>
+</div>
+<div id="author_profile">
+    <div id="author_profile_info" class="author_profile_info">
+            <a href="http://home.cnblogs.com/u/lwme/" target="_blank"><img src="./flot - jQuery 图表插件(jquery.flot)使用 - 囧月 - 博客园_files/u123775.jpg" class="author_avatar" alt=""></a>
+        <div id="author_profile_detail" class="author_profile_info">
+            <a href="http://home.cnblogs.com/u/lwme/">囧月</a><br>
+            <a href="http://home.cnblogs.com/u/lwme/followees">关注 - 72</a><br>
+            <a href="http://home.cnblogs.com/u/lwme/followers">粉丝 - 194</a>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div id="author_profile_honor"></div>
+    <div id="author_profile_follow">
+                <a href="javascript:void(0);" onclick="follow(&#39;a7d8b0ea-cb3c-df11-ba8f-001cf0cd104b&#39;);return false;">+加关注</a>
+    </div>
+</div>
+<div id="div_digg">
+    <div class="diggit" onclick="votePost(2645984,&#39;Digg&#39;)">
+        <span class="diggnum" id="digg_count">4</span>
+    </div>
+    <div class="buryit" onclick="votePost(2645984,&#39;Bury&#39;)">
+        <span class="burynum" id="bury_count">1</span>
+    </div>
+    <div class="clear"></div>
+    <div class="diggword" id="digg_tips">
+    </div>
+</div>
+<script type="text/javascript">
+    currentDiggType = 0;
+</script></div>
+        <div class="clear"></div>
+        <div id="post_next_prev"><a href="http://www.cnblogs.com/lwme/archive/2012/04/11/jquery-ui-dialog.html" class="p_n_p_prefix">« </a> 上一篇：<a href="http://www.cnblogs.com/lwme/archive/2012/04/11/jquery-ui-dialog.html" title="发布于2012-04-11 22:53">jQuery UI Dialog 创建友好的弹出对话框</a><br><a href="http://www.cnblogs.com/lwme/archive/2012/11/24/nook_simple_touch_rooting.html" class="p_n_p_prefix">» </a> 下一篇：<a href="http://www.cnblogs.com/lwme/archive/2012/11/24/nook_simple_touch_rooting.html" title="发布于2012-11-24 13:52">Nook2之搞机记</a><br></div>
+    </div>
+</div>
+    <ul class="postmetadata">
+        <li class="icon_cat" id="BlogPostCategory">分类: <a href="http://www.cnblogs.com/lwme/category/352262.html" target="_blank">JavaScript</a></li>
+        <li class="icon_bullet" id="EntryTag">标签: <a href="http://www.cnblogs.com/lwme/tag/jquery/">jquery</a>, <a href="http://www.cnblogs.com/lwme/tag/flot/">flot</a></li>
+    </ul>
+</div>
+<script type="text/javascript">var allowComments=true,cb_blogId=69285,cb_entryId=2645984,cb_blogApp=currentBlogApp,cb_blogUserGuid='a7d8b0ea-cb3c-df11-ba8f-001cf0cd104b',cb_entryCreatedDate='2012/8/18 23:50:00';loadViewCount(cb_entryId);var cb_postType=1;</script>
+<script type="text/javascript">
+    var m = window.__blog.postRendered;
+    if (m) { m(__$("post")); }
+</script>
+<script type="text/javascript">
+    var m = window.__blog.postRenderPosts;
+    if (m) { m(); }
+</script>
+</div><a name="!comments"></a><div id="blog-comments-placeholder"><div id="comments_pager_top"></div>
+<a class="addcomment" href="https://www.cnblogs.com/lwme/archive/2012/08/18/jquery-flot-plugin.html#comment_tip">Add your comment</a>
+<h3 id="comments"></h3>
+<div class="feedbackNoItems"></div>
+<script language="javascript" type="text/javascript">
+    var m = window.__blog.preRenderCommentList;
+    if (m) { m(); }
+</script>
+
+<ol class="commentlist" id="commentList">	
+
+		<li class="alt">
+			<h5>
+				<cite><a href="https://www.cnblogs.com/lwme/archive/2012/08/18/jquery-flot-plugin.html#2653335" class="layer">#1楼</a><a name="2653335" id="comment_anchor_2653335"></a></cite> <a id="a_comment_author_2653335" href="http://www.cnblogs.com/q123126/" target="_blank">清海扬波</a> <a href="http://msg.cnblogs.com/send/%E6%B8%85%E6%B5%B7%E6%89%AC%E6%B3%A2" title="发送站内短消息" class="sendMsg2This">&nbsp;</a><small> <span class="comment_date">2013-04-09 17:23</span></small>
+			</h5>
+			<div id="comment_body_2653335" class="blog_comment_body">你好，我想再手机上面使用，不知道高宽能设置自动调整吗。</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(2653335,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(2653335,&#39;Bury&#39;,this)">反对(0)</a></div><span id="comment_2653335_avatar" style="display:none;">http://pic.cnblogs.com/face/u51734.jpg</span>
+			<div class="opt_comment"><span class="comment_actions"></span></div>
+		</li>
+	
+		<li class="alt">
+			<h5>
+				<cite><a href="https://www.cnblogs.com/lwme/archive/2012/08/18/jquery-flot-plugin.html#2653838" class="layer">#2楼</a><a name="2653838" id="comment_anchor_2653838"></a>[<span class="louzhu">楼主</span>]</cite> <a id="a_comment_author_2653838" href="http://www.cnblogs.com/lwme/" target="_blank">囧月</a> <a href="http://msg.cnblogs.com/send/%E5%9B%A7%E6%9C%88" title="发送站内短消息" class="sendMsg2This">&nbsp;</a><small> <span class="comment_date">2013-04-10 10:40</span></small>
+			</h5>
+			<div id="comment_body_2653838" class="blog_comment_body"><a href="https://www.cnblogs.com/lwme/archive/2012/08/18/jquery-flot-plugin.html#2653335" title="查看所回复的评论" onclick="commentManager.renderComments(0,50,2653335);">@</a>
+清海扬波<br>那你需要先获取屏幕的分辨率，设置好容器的大小，再去绘制图形<br>不过估计显示效果不会太好，而且某些事件应该还不支持<br>有兴趣的话关注一下 <a href="https://github.com/flot/flot/issues" target="_blank">https://github.com/flot/flot/issues</a> 里面的问题<br>还有官方网站：<a href="http://www.flotcharts.org/" target="_blank">http://www.flotcharts.org/</a></div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(2653838,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(2653838,&#39;Bury&#39;,this)">反对(0)</a></div><span id="comment_2653838_avatar" style="display:none;">http://pic.cnblogs.com/face/u123775.jpg?id=02201823</span>
+			<div class="opt_comment"><span class="comment_actions"></span></div>
+		</li>
+	
+		<li class="alt">
+			<h5>
+				<cite><a href="https://www.cnblogs.com/lwme/archive/2012/08/18/jquery-flot-plugin.html#2654761" class="layer">#3楼</a><a name="2654761" id="comment_anchor_2654761"></a></cite> <a id="a_comment_author_2654761" href="http://www.cnblogs.com/q123126/" target="_blank">清海扬波</a> <a href="http://msg.cnblogs.com/send/%E6%B8%85%E6%B5%B7%E6%89%AC%E6%B3%A2" title="发送站内短消息" class="sendMsg2This">&nbsp;</a><small> <span class="comment_date">2013-04-11 09:40</span></small>
+			</h5>
+			<div id="comment_body_2654761" class="blog_comment_body"><a href="https://www.cnblogs.com/lwme/archive/2012/08/18/jquery-flot-plugin.html#2653838" title="查看所回复的评论" onclick="commentManager.renderComments(0,50,2653838);">@</a>
+囧月<br>好的，谢谢。确实现在试了几种，在手机上效果都不好，真纠结。</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(2654761,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(2654761,&#39;Bury&#39;,this)">反对(0)</a></div><span id="comment_2654761_avatar" style="display:none;">http://pic.cnblogs.com/face/u51734.jpg</span>
+			<div class="opt_comment"><span class="comment_actions"></span></div>
+		</li>
+	
+		<li class="alt">
+			<h5>
+				<cite><a href="https://www.cnblogs.com/lwme/archive/2012/08/18/jquery-flot-plugin.html#2733309" class="layer">#4楼</a><a name="2733309" id="comment_anchor_2733309"></a></cite> <a id="a_comment_author_2733309" href="http://home.cnblogs.com/u/504523/" target="_blank">rambo1</a> <a href="http://msg.cnblogs.com/send/rambo1" title="发送站内短消息" class="sendMsg2This">&nbsp;</a><small> <span class="comment_date">2013-07-23 12:55</span></small>
+			</h5>
+			<div id="comment_body_2733309" class="blog_comment_body">您好 您是这个作者吗?  小弟github 英语水平有限  找出一些改善的建议 希望能一起讨论  再次感谢您的辛劳总结</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(2733309,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(2733309,&#39;Bury&#39;,this)">反对(0)</a></div>
+			<div class="opt_comment"><span class="comment_actions"></span></div>
+		</li>
+	
+		<li class="alt">
+			<h5>
+				<cite><a href="https://www.cnblogs.com/lwme/archive/2012/08/18/jquery-flot-plugin.html#2733348" class="layer">#5楼</a><a name="2733348" id="comment_anchor_2733348"></a>[<span class="louzhu">楼主</span>]</cite> <a id="a_comment_author_2733348" href="http://www.cnblogs.com/lwme/" target="_blank">囧月</a> <a href="http://msg.cnblogs.com/send/%E5%9B%A7%E6%9C%88" title="发送站内短消息" class="sendMsg2This">&nbsp;</a><small> <span class="comment_date">2013-07-23 13:47</span></small>
+			</h5>
+			<div id="comment_body_2733348" class="blog_comment_body"><a href="https://www.cnblogs.com/lwme/archive/2012/08/18/jquery-flot-plugin.html#2733309" title="查看所回复的评论" onclick="commentManager.renderComments(0,50,2733309);">@</a>
+rambo1<br>额。。不是的，这是老外的东西</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(2733348,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(2733348,&#39;Bury&#39;,this)">反对(0)</a></div><span id="comment_2733348_avatar" style="display:none;">http://pic.cnblogs.com/face/u123775.jpg?id=02201823</span>
+			<div class="opt_comment"><span class="comment_actions"></span></div>
+		</li>
+	
+		<li class="alt">
+			<h5>
+				<cite><a href="https://www.cnblogs.com/lwme/archive/2012/08/18/jquery-flot-plugin.html#2826950" class="layer">#6楼</a><a name="2826950" id="comment_anchor_2826950"></a></cite> <a id="a_comment_author_2826950" href="http://www.cnblogs.com/bestfriends/" target="_blank">JeffreyWong</a> <a href="http://msg.cnblogs.com/send/JeffreyWong" title="发送站内短消息" class="sendMsg2This">&nbsp;</a><small> <span class="comment_date">2013-11-29 15:35</span></small>
+			</h5>
+			<div id="comment_body_2826950" class="blog_comment_body">mark</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(2826950,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(2826950,&#39;Bury&#39;,this)">反对(0)</a></div><span id="comment_2826950_avatar" style="display:none;">http://pic.cnblogs.com/face/u411327.jpg?id=28151337</span>
+			<div class="opt_comment"><span class="comment_actions"></span></div>
+		</li>
+	
+		<li class="alt">
+			<h5>
+				<cite><a href="https://www.cnblogs.com/lwme/archive/2012/08/18/jquery-flot-plugin.html#3714822" class="layer">#7楼</a><a name="3714822" id="comment_anchor_3714822"></a><span id="comment-maxId" style="display:none;">3714822</span><span id="comment-maxDate" style="display:none;">2017/6/15 10:18:04</span></cite> <a id="a_comment_author_3714822" href="http://www.cnblogs.com/sssszaw/" target="_blank">sssszaw</a> <a href="http://msg.cnblogs.com/send/sssszaw" title="发送站内短消息" class="sendMsg2This">&nbsp;</a><small> <span class="comment_date">2017-06-15 10:18</span></small>
+			</h5>
+			<div id="comment_body_3714822" class="blog_comment_body">您好，我想问下您的这个在绘制多个刻度轴，设置两个y轴的时候为什么没出现效果呢？而且代码不报错{ label: "Three", data: [[2, 6], [5, 8], [18, 15]], yaxis: 2 },<br>  ],<br>  {<br>    xaxes: [{ position: "bottom" }],<br>    yaxes: [{ position: "left" }, { position: "right", min: 2 }]</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3714822,&#39;Digg&#39;,this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3714822,&#39;Bury&#39;,this)">反对(0)</a></div><span id="comment_3714822_avatar" style="display:none;">http://pic.cnblogs.com/face/1002865/20160803093441.png</span>
+			<div class="opt_comment"><span class="comment_actions"></span></div>
+		</li>
+	
+</ol>
+
+<script language="javascript" type="text/javascript">
+    var m = window.__blog.commentListRendered;
+    if (m) { m(__$("commentList")); }
+</script><div id="comments_pager_bottom"></div></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id="comment_form" class="commentform">
+<a name="commentform"></a>
+<div id="divCommentShow"></div>
+<div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="https://www.cnblogs.com/lwme/archive/2012/08/18/jquery-flot-plugin.html#" onclick="return RefreshPage();">刷新页面</a><a href="https://www.cnblogs.com/lwme/archive/2012/08/18/jquery-flot-plugin.html#top">返回顶部</a></div>
+<div id="comment_form_container"><div class="login_tips">注册用户登录后才能发表评论，请 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return login(&#39;commentform&#39;);">登录</a> 或 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return register();">注册</a>，<a href="http://www.cnblogs.com/">访问</a>网站首页。</div></div>
+<div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+<div id="ad_t2"><a href="http://www.ucancode.com/index.htm" target="_blank">【推荐】超50万VC++源码: 大型组态工控、电力仿真CAD与GIS源码库！</a><br><a href="https://dnspod.cloud.tencent.com/act/yearendsales?from=IT&amp;fromSource=gwzcw.951778.951778.951778" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T2-T2-腾讯云&#39;)">【推荐】腾讯云新注册用户域名抢购1元起</a><br><a href="http://clickc.admaster.com.cn/c/a105960,b2436453,c1705,i0,m101,8a1,8b2,h" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T2-T2-华为云&#39;)">【活动】华为云7大明星产品0元免费使用！</a><br><a href="https://www.upyun.com/products/prismcdn?utm_source=cnblogs&amp;utm_medium=banner&amp;utm_campaign=prismcdn&amp;utm_content=0614" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T2-T2-upyun&#39;)">【推荐】又拍云强势推出超低价、低延时、超强兼容的 P2P-CDN！</a><br><a href="http://challenge.xfyun.cn/?ch=bk" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T2-xfyun&#39;)">【大赛】2018首届“顶天立地”AI开发者大赛</a><br></div>
+<div id="opt_under_post"></div>
+<div id="cnblogs_c1" class="c_ad_block"><a href="https://cloud.tencent.com/freetier?fromSource=gwzcw.1027255.1027255.1027255" target="_blank"><img width="300" height="250" src="./flot - jQuery 图表插件(jquery.flot)使用 - 囧月 - 博客园_files/24442-20180611171134854-1629599186.jpg" alt="腾讯云0611" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;C1&#39;);"></a></div>
+<div id="under_post_news"><div class="itnews c_ad_block"><b>最新IT新闻</b>:<br> ·  <a href="https://news.cnblogs.com/n/599902/" target="_blank">电商平台叫卖拆婚中彩等符咒，网络不法骗术如何判定？</a><br> ·  <a href="https://news.cnblogs.com/n/599900/" target="_blank">抖音，拐点降临了</a><br> ·  <a href="https://news.cnblogs.com/n/599899/" target="_blank">效果惊艳！北大团队提出Attentive GAN去除图像中雨滴</a><br> ·  <a href="https://news.cnblogs.com/n/599901/" target="_blank">黑莓KEYone将迎安卓8.0更新：6月28日推送</a><br> ·  <a href="https://news.cnblogs.com/n/599898/" target="_blank">英国NHS成立首家网瘾诊所：主要针对“游戏成瘾者”</a><br>» <a href="http://news.cnblogs.com/" title="IT新闻" target="_blank">更多新闻...</a></div></div>
+<div id="cnblogs_c2" class="c_ad_block"><a href="http://click.aliyun.com/m/34770/" target="_blank"><img src="./flot - jQuery 图表插件(jquery.flot)使用 - 囧月 - 博客园_files/TB1gBPhgZLJ8KJjy0FnXXcFDpXa-468-60.jpg" alt="" style="width: 468px; height: 60px;"></a></div>
+<div id="under_post_kb"><div class="itnews c_ad_block" id="kb_block"><b>最新知识库文章</b>:<br><div id="kb_recent"> ·  <a href="http://kb.cnblogs.com/page/522513/" target="_blank">如何提升你的能力？给年轻程序员的几条建议</a><br> ·  <a href="http://kb.cnblogs.com/page/553361/" target="_blank">程序员的那些反模式</a><br> ·  <a href="http://kb.cnblogs.com/page/598335/" target="_blank">程序员的宇宙时间线</a><br> ·  <a href="http://kb.cnblogs.com/page/597877/" target="_blank">突破程序员思维</a><br> ·  <a href="http://kb.cnblogs.com/page/597631/" target="_blank">云、雾和霭计算如何一起工作</a><br></div>» <a href="http://kb.cnblogs.com/" target="_blank">更多知识库文章...</a></div></div>
+<div id="HistoryToday" class="c_ad_block"></div>
+<script type="text/javascript">
+    fixPostBody();
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverAdT2();
+    deliverAdC1();
+    deliverAdC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);   
+</script>
+</div>
+
+
+        </div>
+
+        <script type="text/javascript">
+            var m = window.__blog.contentRendered;
+            if (m) { m(__$("content")); }
+        </script>
+
+        <div id="sidebar">
+            
+<div id="about">
+<div>
+<h2 id="about_title">About</h2>
+<div id="about_body">
+<div id="blog-news"><script type="text/javascript">window['__document_write_ajax_callbacks__']['3']();</script><script type="text/javascript">window['__document_write_ajax_callbacks__']['1']();</script><div id="profile_block">昵称：<a href="https://home.cnblogs.com/u/lwme/">囧月</a><br>园龄：<a href="https://home.cnblogs.com/u/lwme/" title="入园时间：2010-03-31">8年2个月</a><br>粉丝：<a href="https://home.cnblogs.com/u/lwme/followers/">194</a><br>关注：<a href="https://home.cnblogs.com/u/lwme/followees/">72</a><div id="p_b_follow"><a href="javascript:void(0);" onclick="follow(&#39;a7d8b0ea-cb3c-df11-ba8f-001cf0cd104b&#39;)">+加关注</a></div><script type="text/javascript">window['__document_write_ajax_callbacks__']['4']();</script><script>window['__document_write_ajax_callbacks__']['2']();</script></div></div>
+<script type="text/javascript">loadBlogNews();</script>
+</div>
+</div>
+</div>
+
+            <script type="text/javascript">
+                var m = window.__blog.aboutRendered;
+                if (m) { m(__$("about")); }
+            </script>
+            
+<div id="mySearchWrapper">
+    <div id="mySearch">
+        <input type="image" src="./flot - jQuery 图表插件(jquery.flot)使用 - 囧月 - 博客园_files/btnsearch.gif" id="btnZzk" class="submit" onclick="zzk_go();return false;">
+        <label class="lb_search"><input type="text" id="q" onkeydown="return zzk_go_enter(event);" class="keyword"></label>
+    </div>
+</div>
+
+            <script type="text/javascript">
+                var m = window.__blog.searchFormRendered;
+                if (m) { m(__$("searchform")); }
+            </script>
+            <div id="sideMain">
+            <div id="side-recent-comments">
+        <h2>最新评论</h2>
+        <ul class="voice">
+                <li>
+                    <a href="http://www.cnblogs.com/lwme/p/use-jsplumb-make-flowChart-designer.html#3969790">Re:使用jsPlumb制作流程图设计器</a>
+                    <br>
+                    <a class="child" href="http://www.cnblogs.com/lwme/p/use-jsplumb-make-flowChart-designer.html#3969790">
+                        请问下，如何实现流程图缩放的效果  滚动轴向上的时候整体放大  反之  缩小？
+                        -- jackC588
+                    </a>
+                </li>
+                <li>
+                    <a href="http://www.cnblogs.com/lwme/archive/2011/11/18/npoi_excel_import_export.html#3858967">Re:使用NPOI导入导出标准Excel</a>
+                    <br>
+                    <a class="child" href="http://www.cnblogs.com/lwme/archive/2011/11/18/npoi_excel_import_export.html#3858967">
+                        终于找到一个不要分的了，感谢分享
+                        -- 暗炽尽染
+                    </a>
+                </li>
+                <li>
+                    <a href="http://www.cnblogs.com/lwme/archive/2011/11/18/npoi_excel_import_export.html#3786042">Re:使用NPOI导入导出标准Excel</a>
+                    <br>
+                    <a class="child" href="http://www.cnblogs.com/lwme/archive/2011/11/18/npoi_excel_import_export.html#3786042">
+                        @InkFx
+你直接打开网站，然后把楼主的文件打开，不用复制那么麻烦，而且还各种报错，看明白就自己重写赋用就好了。
+                        -- 清风一人醉
+                    </a>
+                </li>
+                <li>
+                    <a href="http://www.cnblogs.com/lwme/archive/2012/12/25/configuring-git-server-and-client-on-windows.html#3771230">Re:Windows下配置Git服务器和客户端</a>
+                    <br>
+                    <a class="child" href="http://www.cnblogs.com/lwme/archive/2012/12/25/configuring-git-server-and-client-on-windows.html#3771230">
+                        受益了。谢谢楼主分享。
+Git 常用命令速查表 http://www.jqhtml.com/7983.html
+                        -- 秋风扫落叶2
+                    </a>
+                </li>
+                <li>
+                    <a href="http://www.cnblogs.com/lwme/archive/2012/02/12/jquery-ui-autocomplete.html#3746687">Re:jQuery UI Autocomplete 体验</a>
+                    <br>
+                    <a class="child" href="http://www.cnblogs.com/lwme/archive/2012/02/12/jquery-ui-autocomplete.html#3746687">
+                        jquery插件集:http://www.jqhtml.com/category/article/plugs
+                        -- 我是一只小小鸟~
+                    </a>
+                </li>
+        </ul>
+    </div></div>
+            <div id="sideRight">
+            <div id="side-archives">
+        <h2>随笔档案</h2>
+        <ul class="date">
+                <li><a href="http://www.cnblogs.com/lwme/archive/2013/12.html">2013年12月(3)</a></li>
+                <li><a href="http://www.cnblogs.com/lwme/archive/2013/11.html">2013年11月(2)</a></li>
+                <li><a href="http://www.cnblogs.com/lwme/archive/2013/10.html">2013年10月(3)</a></li>
+                <li><a href="http://www.cnblogs.com/lwme/archive/2013/09.html">2013年9月(1)</a></li>
+                <li><a href="http://www.cnblogs.com/lwme/archive/2013/07.html">2013年7月(6)</a></li>
+                <li><a href="http://www.cnblogs.com/lwme/archive/2013/05.html">2013年5月(1)</a></li>
+                <li><a href="http://www.cnblogs.com/lwme/archive/2013/01.html">2013年1月(1)</a></li>
+                <li><a href="http://www.cnblogs.com/lwme/archive/2012/12.html">2012年12月(3)</a></li>
+                <li><a href="http://www.cnblogs.com/lwme/archive/2012/11.html">2012年11月(1)</a></li>
+                <li><a href="http://www.cnblogs.com/lwme/archive/2012/08.html">2012年8月(1)</a></li>
+                <li><a href="http://www.cnblogs.com/lwme/archive/2012/04.html">2012年4月(2)</a></li>
+                <li><a href="http://www.cnblogs.com/lwme/archive/2012/02.html">2012年2月(8)</a></li>
+                <li><a href="http://www.cnblogs.com/lwme/archive/2012/01.html">2012年1月(1)</a></li>
+                <li><a href="http://www.cnblogs.com/lwme/archive/2011/11.html">2011年11月(4)</a></li>
+                <li><a href="http://www.cnblogs.com/lwme/archive/2011/10.html">2011年10月(1)</a></li>
+                <li><a href="http://www.cnblogs.com/lwme/archive/2010/12.html">2010年12月(3)</a></li>
+                <li><a href="http://www.cnblogs.com/lwme/archive/2010/11.html">2010年11月(4)</a></li>
+                <li><a href="http://www.cnblogs.com/lwme/archive/2010/10.html">2010年10月(1)</a></li>
+                <li><a href="http://www.cnblogs.com/lwme/archive/2010/09.html">2010年9月(3)</a></li>
+                <li><a href="http://www.cnblogs.com/lwme/archive/2010/07.html">2010年7月(1)</a></li>
+                <li><a href="http://www.cnblogs.com/lwme/archive/2010/05.html">2010年5月(6)</a></li>
+                <li><a href="http://www.cnblogs.com/lwme/archive/2010/04.html">2010年4月(9)</a></li>
+        </ul>
+    </div>    
+
+    
+
+    
+    
+
+
+</div>
+            <div id="sideLeft">
+            <div id="side-hottags">
+        <h2>我的标签</h2>
+        <ul class="folder">
+            <li><a href="http://www.cnblogs.com/lwme/tag/jquery/">jquery</a>(8)</li><li><a href="http://www.cnblogs.com/lwme/tag/ios/">ios</a>(8)</li><li><a href="http://www.cnblogs.com/lwme/tag/formvalidation/">formvalidation</a>(4)</li><li><a href="http://www.cnblogs.com/lwme/tag/fancy%2Bvalidate/">fancy+validate</a>(4)</li><li><a href="http://www.cnblogs.com/lwme/tag/fancyvalidate/">fancyvalidate</a>(4)</li><li><a href="http://www.cnblogs.com/lwme/tag/fancy-validate/">fancy-validate</a>(4)</li><li><a href="http://www.cnblogs.com/lwme/tag/validation/">validation</a>(4)</li><li><a href="http://www.cnblogs.com/lwme/tag/%E8%A1%A8%E5%8D%95%E9%AA%8C%E8%AF%81/">表单验证</a>(4)</li><li><a href="http://www.cnblogs.com/lwme/tag/xamarin/">xamarin</a>(2)</li><li><a href="http://www.cnblogs.com/lwme/tag/jquery%20ui/">jquery ui</a>(2)</li><li><a href="http://www.cnblogs.com/lwme/tag/">更多</a></li>
+        </ul>
+    </div><div id="side-categories">
+        <h2>随笔分类</h2>
+        <ul class="folder">
+                <li>
+                    
+                    <a href="http://www.cnblogs.com/lwme/category/262226.html">.NET(16)</a>
+                </li>
+                <li>
+                    
+                    <a href="http://www.cnblogs.com/lwme/category/352262.html">JavaScript(21)</a>
+                </li>
+                <li>
+                    
+                    <a href="http://www.cnblogs.com/lwme/category/431732.html">Others(6)</a>
+                </li>
+                <li>
+                    
+                    <a href="http://www.cnblogs.com/lwme/category/243746.html">StringTemplate(12)</a>
+                </li>
+                <li>
+                    
+                    <a href="http://www.cnblogs.com/lwme/category/260129.html">WPF&amp;Silverlight(2)</a>
+                </li>
+                <li>
+                    
+                    <a href="http://www.cnblogs.com/lwme/category/479925.html">移动开发(8)</a>
+                </li>
+        </ul>
+    </div><div id="side-top-posts-custom">
+    <h2>推荐排行榜</h2>
+    <div id="TopDiggPostsBlock"><ul><li><a href="https://www.cnblogs.com/lwme/archive/2011/11/18/npoi_excel_import_export.html">1. 使用NPOI导入导出标准Excel(65)</a></li><li><a href="https://www.cnblogs.com/lwme/archive/2011/11/27/2265323.html">2. 使用开源免费类库在.net中操作Excel(18)</a></li><li><a href="https://www.cnblogs.com/lwme/archive/2012/02/16/qtip2-jquery-plugin.html">3. qTip2 精致的jQuery提示信息插件(16)</a></li><li><a href="https://www.cnblogs.com/lwme/p/Simplified-UI-on-the-iOS-with-MonoTouch-Dialog.html">4. 使用MonoTouch.Dialog简化iOS界面开发(11)</a></li><li><a href="https://www.cnblogs.com/lwme/p/use-xamarin-develop-android-ios-app.html">5. Xamarin体验：使用C#开发iOS/Android应用(10)</a></li></ul></div>
+</div><div id="side-top-posts">
+    <h2>阅读排行榜</h2>
+    <div id="TopViewPostsBlock"><ul><li><a href="https://www.cnblogs.com/lwme/archive/2011/11/18/npoi_excel_import_export.html">1. 使用NPOI导入导出标准Excel(59704)</a></li><li><a href="https://www.cnblogs.com/lwme/p/use-xamarin-develop-android-ios-app.html">2. Xamarin体验：使用C#开发iOS/Android应用(28554)</a></li><li><a href="https://www.cnblogs.com/lwme/archive/2012/08/18/jquery-flot-plugin.html">3. flot - jQuery 图表插件(jquery.flot)使用(26285)</a></li><li><a href="https://www.cnblogs.com/lwme/archive/2012/02/12/jquery-ui-autocomplete.html">4. jQuery UI Autocomplete 体验(25992)</a></li><li><a href="https://www.cnblogs.com/lwme/archive/2012/04/11/jquery-ui-dialog.html">5. jQuery UI Dialog 创建友好的弹出对话框(23518)</a></li></ul></div>
+</div></div>
+            
+                <div id="sideContainer"></div>
+                <script type="text/javascript">
+                    $.ajax({
+                        url: '/' + currentBlogApp + '/mvc/blog/Minyx2_Lite_SideColumn.aspx',
+                        data: '{}',
+                        type: 'post',
+                        dataType: 'text',
+                        contentType: 'application/json; charset=utf-8',
+                        success: function (data) {
+                            if (data) {
+                                $("#sideContainer").html(data);
+                                loadBlogDefaultCalendar();
+                                loadBlogSideBlocks();
+                                var m = window.__blog.sideContainerRendered;
+                                if (m) { m(__$("sideContainer")); }
+                                window.__blog.sidebar.__layout();
+                            }
+                        }
+                    });
+
+                </script>
+            
+        </div>
+
+        <script type="text/javascript">
+            var m = window.__blog.sidebarRendered;
+            if (m) { m(__$("sidebar")); }
+        </script>
+
+        <div id="footer">
+            
+<p id="logoFoot">
+    <a href="http://www.spiga.com.mx/" title="Agencia Interactiva Spiga">www.spiga.com.mx</a>
+</p>
+<div class="footText">
+<p>
+Copyright ©2018 囧月
+</p>
+<p>
+<a href="http://www.cnblogs.com/">博客园</a>
+</p>
+</div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var m = window.__blog.wrapperRendered;
+        if (m) { m(__$("wrapper")); }
+    </script>
+
+</div>
+<script type="text/javascript">
+    var m = window.__blog.containerRendered;
+    if (m) { m(__$("container")); }
+</script>
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29369350-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script><script type="text/javascript">getFollowStatus('a7d8b0ea-cb3c-df11-ba8f-001cf0cd104b')</script></body></html>
